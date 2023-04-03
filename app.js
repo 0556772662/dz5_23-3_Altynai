@@ -14,11 +14,11 @@ const convert = (elem, target, target2) => {
             const response = JSON.parse(request.response)
             target.forEach(function (e) {
                 if (target2 === 'som') {
-                    e.value = (elem.value / response[e.id].toFixed(2))
+                    e.value = (elem.value / response[e.id]).toFixed(2)
                 } else if (e === som) {
-                    e.value = (elem.value * response[e.id].toFixed(2))
+                    e.value = (elem.value * response[elem.id]).toFixed(2)
                 } else {
-                    e.value = ((elem.value * response[elem.id]) / response[e.id].toFixed(2))
+                    e.value = ((elem.value * response[elem.id]) / response[e.id]).toFixed(2)
                 }
             })
             elem.value === '' && (target.forEach(e => e.value = ''))
